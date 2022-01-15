@@ -1,21 +1,46 @@
 import React from 'react';
 import styled from "styled-components";
 
+export enum ButtonType {
+    Number,
+    Operation
+}
+
 type Props = {
+    type?: ButtonType;
     label: string;
+    position?: [x: number, y: number];
+    width?: number;
+    height?: number;
 }
 
 const StyledButton = styled.button`
-    background: #c48900;
+    background: #727171;
     border: none;
     border-radius: .5rem;
+    color: #fff;
     font-size: 1.5rem;
 `;
 
-const Button: React.FC<Props> = ({label}) => {
-  return (
-    <StyledButton>{label}</StyledButton>
-  );
+const Button: React.FC<Props> = ({type = ButtonType.Operation, label, position, width, height}) => {
+    const styles: React.CSSProperties = {};
+    if (position) {
+        styles.gridColumnStart = position[0] + 1;
+        styles.gridRowStart = position[1] + 1;
+    }
+    if (width) {
+        styles.gridColumnEnd = `span ${width}`
+    }
+    if (height) {
+        styles.gridRowEnd = `span ${height}`
+    }
+    if(type === ButtonType.Number) {
+        styles.color = '#000';
+        styles.background = '#E48900'
+    }
+    return (
+        <StyledButton style={styles}>{label}</StyledButton>
+    );
 }
 
 export default Button;
