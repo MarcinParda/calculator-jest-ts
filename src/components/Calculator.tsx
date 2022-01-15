@@ -3,8 +3,6 @@ import styled from "styled-components";
 import Button from "components/Button";
 
 const Container = styled.div`
-    background-color: #323232;
-    flex: 1;
 `;
 
 const Grid = styled.div`
@@ -18,6 +16,8 @@ const Calculator: React.FC = () => {
   return (
   <Container>
       <Grid>
+          <Button label="AC" />
+          <Button label="Oops" />
           <Button label="9" />
           <Button label="8" />
           <Button label="7" />

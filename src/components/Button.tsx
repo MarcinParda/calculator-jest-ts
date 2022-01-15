@@ -8,7 +8,8 @@ type Props = {
 const StyledButton = styled.button`
     background: #c48900;
     border: none;
-    border-radius: 8px;
+    border-radius: .5rem;
+    font-size: 1.5rem;
 `;
 
 const Button: React.FC<Props> = ({label}) => {
