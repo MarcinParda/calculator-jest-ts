@@ -85,11 +85,14 @@ const getState = (inputs: Array<CalcInput>): CalcState => {
 
     if (!lastOperation) return {displayValue: builder.working.value};
 
+    const lastInput = inputs.length ? inputs[inputs.length - 1] : null;
+    const total = getTotal(operations)
+
     switch (lastOperation.operator) {
         case OperatorType.Equals:
-            return {displayValue: getTotal(operations)}
+            return {displayValue: total};
         default:
-            return {displayValue: builder.working.value }
+            return {displayValue: lastInput && lastInput.type === InputType.Numerical ? builder.working.value : total }
     }
 
 }
