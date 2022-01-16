@@ -83,7 +83,7 @@ const getState = (inputs: Array<CalcInput>): CalcState => {
 
     const lastOperation = operations.length ? operations[operations.length - 1] : null;
 
-    if (!lastOperation) return {displayValue: 0};
+    if (!lastOperation) return {displayValue: builder.working.value};
 
     switch (lastOperation.operator) {
         case OperatorType.Equals:
