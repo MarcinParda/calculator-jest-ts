@@ -1,5 +1,6 @@
 # Calculator
-Caculator with functionality of add and substract. High test coverage.
+Caculator with functionality of add and substract. High test coverage. 
+## Watch it [live](https://shimmering-babka-da98fd.netlify.app/)
 ## ![Calculator App](https://cdn.discordapp.com/attachments/917864818189418576/932348676276387912/unknown.png)
 
 
